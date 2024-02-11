@@ -1,5 +1,6 @@
 class Solution {
     public boolean isSubsequence(String s, String t) {
+        if(s.length() > t.length()) return false;
         
         Queue<Character> q = new ArrayDeque<>();
         for(char a : s.toCharArray()){
