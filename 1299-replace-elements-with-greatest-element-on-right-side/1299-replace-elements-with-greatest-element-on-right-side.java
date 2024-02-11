@@ -1,15 +1,20 @@
 class Solution {
     public int[] replaceElements(int[] arr) {
-        for(int i = 0; i < arr.length - 1; i++){
+        int[] num = new int[arr.length];
+        
+        for(int i = arr.length - 1; i >= 0; i--){
+            if(i == arr.length - 1) {
+                num[i] = -1;
+                continue;
+            }
             int highest = arr[i + 1];
-            for(int j = i + 1; j < arr.length -1; j++){
-                if(highest < arr[j + 1]){
-                    highest = arr[j + 1];
+            for(int j = i + 1; j < arr.length; j++){
+                if(highest < arr[j]){
+                    highest = arr[j];
                 }
             }
-            arr[i] = highest;
+            num[i] = highest;
         }
-        arr[arr.length - 1] = -1;
-        return arr;
+        return num;
     }
 }
