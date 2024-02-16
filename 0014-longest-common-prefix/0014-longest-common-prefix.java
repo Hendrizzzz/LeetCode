@@ -5,14 +5,13 @@ class Solution {
         String a = strs[0];
         String b = strs[strs.length - 1];
         int length = Math.min(a.length(), b.length());
-        int index = -1;
+        int index = 0;
         for(int i = 0; i < length; i++){
             if (a.charAt(i) == b.charAt(i)) index++;
             else break;
         }
         
-        if(index == -1) return "";
-        return a.substring(0, index + 1);
+        return a.substring(0, index);
         
     }
 }
