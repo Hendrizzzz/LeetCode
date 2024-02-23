@@ -1,6 +1,9 @@
 class Solution {
     public boolean isPalindrome(String s) {
-        s = s.toLowerCase();
+        if (s.isEmpty()){
+            return false;
+        }
+        
         int leftPointer = 0;
         int rightPointer = s.length() - 1;
         while(leftPointer < rightPointer){
@@ -16,7 +19,7 @@ class Solution {
                 continue;
             }
             
-            if (left != right){
+            if (Character.toLowerCase(left) != Character.toLowerCase(right)){
                 return false;
             } else{
                 leftPointer++;
