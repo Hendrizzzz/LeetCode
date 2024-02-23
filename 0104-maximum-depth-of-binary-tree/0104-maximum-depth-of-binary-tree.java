@@ -23,8 +23,8 @@ class Solution {
             return 0;
         }
         
-        int maxLeft = maxDepthRecursion(root.left) + 1;
-        int maxRight = maxDepthRecursion(root.right) + 1;
-        return Math.max(maxLeft, maxRight);
+        int maxLeft = maxDepthRecursion(root.left);
+        int maxRight = maxDepthRecursion(root.right);
+        return Math.max(maxLeft, maxRight) + 1;
     }
 }
