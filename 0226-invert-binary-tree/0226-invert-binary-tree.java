@@ -25,9 +25,6 @@ class Solution {
         }
         boolean rightIsNull = root.right == null;
         boolean leftIsNull = root.left == null;
-        if (leftIsNull && rightIsNull){
-            return;
-        }
         
         if (!rightIsNull && !leftIsNull){
             TreeNode temp = root.left;
