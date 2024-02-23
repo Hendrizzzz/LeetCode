@@ -23,9 +23,20 @@ class Solution {
         if (root == null){
             return;
         }
-        TreeNode temp = root.left;
-        root.left = root.right;
-        root.right = temp;
+        boolean rightIsNull = root.right == null;
+        boolean leftIsNull = root.left == null;
+        
+        if (!rightIsNull && !leftIsNull){
+            TreeNode temp = root.left;
+            root.left = root.right;
+            root.right = temp;
+        } else if (!rightIsNull){
+            root.left = root.right;
+            root.right = null;
+        } else {
+            root.right = root.left;
+            root.left = null;
+        }
         
         invertTreeRecursion(root.left);
         invertTreeRecursion(root.right);
