@@ -4,16 +4,19 @@ class Solution {
         int leftPointer = 0;
         int rightPointer = s.length() - 1;
         while(leftPointer < rightPointer){
-            if (!Character.isLetterOrDigit(s.charAt(leftPointer))){
+            char left = s.charAt(leftPointer);
+            char right = s.charAt(rightPointer);
+            
+            if (!Character.isLetterOrDigit(left)){
                 leftPointer++;
                 continue;
             }
-            if (!Character.isLetterOrDigit(s.charAt(rightPointer))){
+            if (!Character.isLetterOrDigit(right)){
                 rightPointer--;
                 continue;
             }
             
-            if (s.charAt(leftPointer) != s.charAt(rightPointer)){
+            if (left != right){
                 return false;
             } else{
                 leftPointer++;
