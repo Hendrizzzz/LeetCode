@@ -1,19 +1,25 @@
-public class Solution {
+class Solution {
     public boolean isPalindrome(String s) {
-        // Clean the string (remove non-alphanumeric characters and convert to lowercase)
-        String cleanedString = cleanString(s);
-        
-        // Check if the cleaned string is a palindrome
-        return cleanedString.equals(new StringBuilder(cleanedString).reverse().toString());
-    }
-
-    private String cleanString(String s) {
-        StringBuilder cleaned = new StringBuilder();
-        for (char ch : s.toCharArray()) {
-            if (Character.isLetterOrDigit(ch)) {
-                cleaned.append(Character.toLowerCase(ch));
+        s = s.toLowerCase();
+        int leftPointer = 0;
+        int rightPointer = s.length() - 1;
+        while(leftPointer < rightPointer){
+            if (!Character.isLetterOrDigit(s.charAt(leftPointer))){
+                leftPointer++;
+                continue;
+            }
+            if (!Character.isLetterOrDigit(s.charAt(rightPointer))){
+                rightPointer--;
+                continue;
+            }
+            
+            if (s.charAt(leftPointer) != s.charAt(rightPointer)){
+                return false;
+            } else{
+                leftPointer++;
+                rightPointer--;
             }
         }
-        return cleaned.toString();
+        return true;
     }
 }
