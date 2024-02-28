@@ -1,21 +1,17 @@
 class MyHashSet {
-    ArrayList<Integer> array = null;
+    ArrayList<Integer> array;
     public MyHashSet() {
         array = new ArrayList<>();
     }
     
     public void add(int key) {
-        array.add(key);
+        if (!array.contains(key)){
+            array.add(key);
+        }
     }
     
     public void remove(int key) {
-        Iterator<Integer> iterator = array.iterator();
-        while(iterator.hasNext()){
-            Integer a = iterator.next();
-            if (a == key){
-                iterator.remove();
-            }
-        }
+        array.remove((Integer)key);
     }
     
     public boolean contains(int key) {
