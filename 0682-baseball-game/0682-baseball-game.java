@@ -7,9 +7,7 @@ class Solution {
             } 
             
             else if (operation.equals("D")){
-                int a = stack.pollLast();
-                stack.add(a);
-                stack.add(2 * a);
+                stack.add(2 * (stack.peekLast()));
             }
             
             else if (operation.equals("+")){
