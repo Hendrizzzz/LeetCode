@@ -19,7 +19,10 @@ class MyHashSet {
     }
     
     public boolean contains(int key) {
-        return array.contains(key);
+        for (Integer a : array){
+            if (a == key) return true;
+        }
+        return false;
     }
 }
 
