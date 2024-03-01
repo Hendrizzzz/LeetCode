@@ -13,13 +13,18 @@ class Solution {
         ListNode previous = null;
         ListNode current = head;
         
-        while (current != null){
-            ListNode temp = current.next;
-            current.next = previous;
-            previous = current;
-            current = temp;
+        return reverseListRecursion(previous, current);
+    }
+    
+    public ListNode reverseListRecursion(ListNode previous, ListNode current){
+        if (current == null){
+            return previous;
         }
         
-        return previous;
+        ListNode temp = current.next;
+        current.next = previous;
+        previous = current;
+        current = temp;
+        return reverseListRecursion(previous, current);
     }
 }
