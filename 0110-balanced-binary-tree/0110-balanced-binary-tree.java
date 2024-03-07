@@ -14,11 +14,9 @@
  * }
  */
 class Solution {
-    public boolean isBalanced(TreeNode root) {
-        return isBalancedRecursion(root);
-    }
+
     
-    private boolean isBalancedRecursion(TreeNode root){
+    public boolean isBalanced(TreeNode root){
         if (root == null){
             return true; 
         }
